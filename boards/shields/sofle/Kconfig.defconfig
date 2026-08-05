@@ -5,10 +5,6 @@ config ZMK_KEYBOARD_NAME
     default "Sofle Choc"
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
-config ZMK_STUDIO
-    default y
-config ZMK_STUDIO_LOCKING
-    default n  
 
 endif #SHIELD_SOFLE_LEFT
 #-----------------------------------------------------
