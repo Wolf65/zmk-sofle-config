@@ -1,0 +1,43 @@
+/*
+* pro_micro == P
+* nrf       == gpio
+*              _________________________
+*              |o B+               B- o|
+*              |o RAW             006 o| gpio0 6  P1
+*              |o GND             008 o| gpio0 8  P0
+*              |o RST             GND o|
+*              |o VCC             GND o|
+* P21 gpio0 31 |o 031  SuperMini  017 o| gpio0 17 P2
+* P20 gpio0 29 |o 029  NRF52840   020 o| gpio0 20 P3
+* P19 gpio0 2  |o 002             022 o| gpio0 22 P4
+* P18 gpio1 15 |o 115             024 o| gpio0 24 P5
+* P15 gpio1 13 |o 113 o VDD 1 1 1 100 o| gpio1 0  P6
+* P14 gpio1 11 |o 111 o DIO 0 0 0 011 o| gpio0 11 P7
+* P16 gpio0 10 |o 010 o CLK 7 2 1 104 o| gpio1 4  P8
+* P10 gpio0 9  |o 009 o GND o o o 106 o| gpio1 6  P9
+*              -------------------------
+*                           | | \ gpio1 1
+*                           | \__ gpio1 2
+*                           \____ gpio1 7
+*/
+
+#include "sofle.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&gpio0 9  GPIO_ACTIVE_HIGH>
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        , <&gpio1 11 GPIO_ACTIVE_HIGH>
+        , <&gpio1 13 GPIO_ACTIVE_HIGH>
+        , <&gpio1 15  GPIO_ACTIVE_HIGH>
+        , <&gpio0 2 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&right_encoder {
+    status = "okay";
+};
