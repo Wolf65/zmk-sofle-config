@@ -1,0 +1,17 @@
+file_format: "1"
+id: sofle_choc
+name: Sofle Choc
+type: shield
+url: https://github.com/josefadamcik/SofleKeyboard
+requires: [nice_nano@2.0.0//zmk]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+  - underglow
+  - studio
+  - pointer
+siblings:
+  - sofle_left
+  - sofle_right
