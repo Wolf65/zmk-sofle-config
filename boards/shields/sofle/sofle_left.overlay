@@ -21,7 +21,7 @@
 *                           \____ gpio1 7
 */
 
-//#include "sofle.dtsi"
+#include "sofle.dtsi"
 
 &kscan0 {
     col-gpios
