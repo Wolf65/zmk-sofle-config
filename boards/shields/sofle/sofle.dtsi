@@ -30,7 +30,7 @@
 
 / {
     chosen {
-//        zephyr,display = &oled;
+        zephyr,display = &oled;
         zmk,kscan = &kscan0;
     };
 
