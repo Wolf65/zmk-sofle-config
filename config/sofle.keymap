@@ -45,13 +45,13 @@
 // |   `   |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   [   |
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | MUTE  |  N   |  M    |  ,    |  .   |   /   |   ]   |
-//               | GUI | ALT  | CTRL | LOWER|  SPACE |  | ENTER | RAISE| CTRL  | ALT   | GUI  |
+//               | GUI | ALT  | CTRL | LOWER|  SPACE |  | ENTER | RAISE| HOME  | INS   | END  |
             bindings = <
-&kp ESC   &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                             &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp GRAVE &kp Q  &kp W    &kp E    &kp R     &kp T                              &kp Y  &kp U     &kp I     &kp O    &kp P    &kp LEFT_BRACKET
-&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                              &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE   &kp C_MUTE &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RIGHT_BRACKET
-                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
+&kp ESC   &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                             &kp N6 &kp N7       &kp N8    &kp N9   &kp N0   &kp BSPC
+&kp GRAVE &kp Q  &kp W    &kp E    &kp R     &kp T                              &kp Y  &kp U        &kp I     &kp O    &kp P    &kp LEFT_BRACKET
+&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                              &kp H  &kp J        &kp K     &kp L    &kp SEMI &kp SQT
+&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE   &kp C_MUTE &kp N  &kp M        &kp COMMA &kp DOT  &kp FSLH &kp RIGHT_BRACKET
+                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp SPACE    &kp ENTER  &mo RAISE  &kp HOME &kp INS   &kp END
             >;
 
             sensor-bindings = 
@@ -117,6 +117,10 @@
 &none             &none           &none           &none           &none           &none            &rgb_ug RGB_TOG &none  &none &none &none &none &none &none
                                   &none           &none           &none           &none            &none           &none  &none &none &none &none
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
     };
