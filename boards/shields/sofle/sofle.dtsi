@@ -58,19 +58,17 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 
         diode-direction = "col2row";
         row-gpios
-            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+            = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+              <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        //steps = <80>;
         steps = <20>; // default is 80, datasheet says 15
         status = "disabled";
     };
@@ -79,7 +77,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         compatible = "alps,ec11";
         a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        //steps = <80>;
         steps = <20>; // default is 80, datasheet says 15
         status = "disabled";
     };
