@@ -4,8 +4,8 @@
 **Controller:** SuperMini NRF52840  
 
 **Equipment:**  
-    - Encoder ec11 (low profile)  
-    - Display oled 128x32  
-    - LED  
-    - Battery  
-    - Touchpad TPS43 (WIP)  
+- Encoder ec11 (low profile)  
+- Display oled 128x32  
+- LED  
+- Battery  
+- Touchpad TPS43 (WIP)  
