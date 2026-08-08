@@ -112,7 +112,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&inc_dec_kp RGB_BRD RGB_BRI>,
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
