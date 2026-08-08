@@ -1,19 +1,12 @@
 #-----------------------------------------------------
 if SHIELD_SOFLE_LEFT
 
-config ZMK_KEYBOARD_NAME
-    default "Sofle Choc"
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif #SHIELD_SOFLE_LEFT
 #-----------------------------------------------------
 if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
-
-config ZMK_SPLIT
-    default y
-config ZMK_SLEEP
-    default y
 
 if ZMK_DISPLAY
 
