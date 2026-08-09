@@ -19,6 +19,14 @@
             then-layer = <ADJUST>;
         };
     };
+
+    behaviors {
+        rgb_encoder: rgb_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRD>, <&rgb_ug RGB_BRI>;
+        };
+    };
     
     macros {
         ZonePrintScreen: ZonePrintScreen {
@@ -112,7 +120,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>,
+                <&rgb_encoder>,
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
