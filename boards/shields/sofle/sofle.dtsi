@@ -3,8 +3,8 @@
 * nrf       == gpio
 *                    _________________________
 *                    |o B+               B- o|
-*                    |o RAW             006 o| gpio0 6  P1    LED
-*                    |o GND             008 o| gpio0 8  P0    DATA
+*                    |o RAW             006 o| gpio0 6  D1    LED
+*                    |o GND             008 o| gpio0 8  D0    DATA
 *                    |o RST             GND o|
 *                    |o VCC             GND o|
 * ENCA  D21 gpio0 31 |o 031  SuperMini  017 o| gpio0 17 D2    SDA
