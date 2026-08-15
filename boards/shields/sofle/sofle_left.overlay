@@ -37,3 +37,7 @@
 &left_encoder {
     status = "okay";
 };
+
+&tps43_listener {
+    status = "okay";
+};

@@ -7,6 +7,8 @@ manifest:
       ####
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+    - name: AYM1607
+      url-base: https://github.com/AYM1607
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -15,6 +17,9 @@ manifest:
       ####
     - name: zmk-nice-oled
       remote: mctechnology17
+      revision: main
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: AYM1607
       revision: main
   self:
     path: config

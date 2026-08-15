@@ -41,3 +41,30 @@
 &right_encoder {
     status = "okay";
 };
+
+&i2c0 {
+    status = "okay"
+    
+    tps43: iqs5xx@74 {
+        status = "okay";
+        compatible = "azoteq,iqs5xx";
+        reg = <0x74>;
+
+        one-finger-tap;
+        press-and-hold;
+        press-and-hold-time = <250>;
+        two-finger-tap;
+
+        scroll;
+        natural-scroll-y;
+        natural-scroll-x;
+
+        bottom-beta = <5>;
+        stationary-threshold = <5>;
+
+        switch-xy;
+
+        reset-gpios = <&gpio1 2 GPIO_ACTIVE_LOW>; 
+        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+    };
+}
