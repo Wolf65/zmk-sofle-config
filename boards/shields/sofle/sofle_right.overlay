@@ -46,6 +46,13 @@
     device = <&tps43>;
 };
 
+/ {
+    tps43_input: tps43_input {
+        compatible = "zmk,input-listener";
+        device = <&tps43>;
+    };
+}
+
 &i2c0 {
     status = "okay";
     tps43: iqs5xx@74 {
