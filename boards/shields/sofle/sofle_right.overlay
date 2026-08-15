@@ -44,10 +44,10 @@
 
 &tps43_split {
     device = <&tps43>;
-}
+};
 
 &i2c0 {
-    status = "okay"
+    status = "okay";
     tps43: iqs5xx@74 {
         status = "okay";
         compatible = "azoteq,iqs5xx";
@@ -70,4 +70,4 @@
         reset-gpios = <&gpio1 2 GPIO_ACTIVE_LOW>; 
         rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
     };
-}
+};

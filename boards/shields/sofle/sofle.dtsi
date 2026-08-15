@@ -23,6 +23,7 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <layouts/josefadamcik/sofle.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &josefadamcik_sofle_layout {
     transform = <&default_transform>;
@@ -106,14 +107,6 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 };
 
-/ { 
-    tps43_listener: tps43_listener {
-    compatible = "zmk,input-listener";
-    // status = "disabled";
-    device = <&tps43>;
-    };
-};
-
 vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
     };
@@ -143,8 +136,6 @@ vbatt: vbatt {
 };
 
 / {
-	
-
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;
