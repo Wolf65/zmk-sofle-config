@@ -106,6 +106,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     };
 };
 
+/ { 
+    tps43_listener: tps43_listener {
+    compatible = "zmk,input-listener";
+    // status = "disabled";
+    device = <&tps43>;
+    };
+};
+
 vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
     };
@@ -132,7 +140,7 @@ vbatt: vbatt {
         inversion-on;
         prechargep = <0x22>;
     };
-    
+
     tps43: iqs5xx@74 {
         status = "okay";
         compatible = "azoteq,iqs5xx";
