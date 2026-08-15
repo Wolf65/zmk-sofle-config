@@ -140,27 +140,25 @@ vbatt: vbatt {
         inversion-on;
         prechargep = <0x22>;
     };
+};
 
-    tps43: iqs5xx@74 {
-        status = "okay";
-        compatible = "azoteq,iqs5xx";
-        reg = <0x74>;
+/ {
+	
 
-        one-finger-tap;
-        press-and-hold;
-        press-and-hold-time = <250>;
-        two-finger-tap;
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
 
-        scroll;
-        natural-scroll-y;
-        natural-scroll-x;
+        tps43_split: tps43_split@74 {
+            compatible = "zmk,input-split";
+            reg = <0x74>;
+        };
+    };
 
-        bottom-beta = <5>;
-        stationary-threshold = <5>;
-
-        switch-xy;
-
-        reset-gpios = <&gpio1 2 GPIO_ACTIVE_LOW>; 
-        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+	tps43_listener: tps43_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&tps43_split>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>, <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP)>;
     };
 };
