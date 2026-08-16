@@ -6,6 +6,11 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif #SHIELD_SOFLE_LEFT
 #-----------------------------------------------------
+if SHIELD_SOFLE_RIGHT
+
+config INPUT_TPS43
+    default y
+    
 if SHIELD_SOFLE_LEFT || SHIELD_SOFLE_RIGHT
 
 if ZMK_DISPLAY

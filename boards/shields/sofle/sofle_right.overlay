@@ -42,39 +42,49 @@
     status = "okay";
 };
 
-&tps43_split {
-    device = <&tps43>;
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    pinctrl-0 = <&i2c0_default>;  /* конфигурация для SDA и SCL */
+    pinctrl-1 = <&i2c0_sleep>;    /* конфигурация для SDA и SCL */
+    pinctrl-names = "default", "sleep";
+
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
+        status = "okay";
+        
+        /* GPIO connections */
+        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* RDY пин */
+        rst-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;  /* RST пин */
+
+        enable-power-management;
+        
+        sensitivity = <110>;           /* 100% = нормальное состояние */
+        scroll-sensitivity = <10>;     /* 50% = нормальное состояние */
+
+        filter-settings=<0x0B>;        /* описание фильтра смотрите в `доступных настройках` */
+
+        scroll;
+        two-finger-tap;
+        single-tap;
+        press-and-hold;
+        swipes;
+
+        switch-xy;
+        invert-scroll-y;
+    };
 };
 
 / {
-    tps43_input: tps43_input {
-        compatible = "zmk,input-listener";
-        device = <&tps43>;
-    };
-}
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
 
-&i2c0 {
-    status = "okay";
-    tps43: iqs5xx@74 {
-        status = "okay";
-        compatible = "azoteq,iqs5xx";
-        reg = <0x74>;
-
-        one-finger-tap;
-        press-and-hold;
-        press-and-hold-time = <250>;
-        two-finger-tap;
-
-        scroll;
-        natural-scroll-y;
-        natural-scroll-x;
-
-        bottom-beta = <5>;
-        stationary-threshold = <5>;
-
-        switch-xy;
-
-        reset-gpios = <&gpio1 2 GPIO_ACTIVE_LOW>; 
-        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+        tps43_split: tps43_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            device = <&tps43_trackpad>;
+        };
     };
 };

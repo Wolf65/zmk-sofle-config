@@ -38,6 +38,21 @@
     status = "okay";
 };
 
-&tps43_listener {
-    status = "okay";
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        tps43_split: tps43_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            /* Здесь нет свойства device - это прокси на центральной стороне */
+        };
+    };
+
+    tps43_listener: tps43_listener {
+        compatible = "zmk,input-listener";
+        device = <&tps43_split>;
+        status = "okay";
+    };
 };
