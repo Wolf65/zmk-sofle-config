@@ -1,2 +1,3 @@
 .DS_Store
 .zmk/
+build_output/
