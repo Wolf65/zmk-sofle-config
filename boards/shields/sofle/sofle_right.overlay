@@ -21,6 +21,7 @@
 *                                 \____ gpio1 7
 */
 
+#include <zephyr/dt-bindings/i2c/i2c.h>
 #include "sofle.dtsi"
 
 &default_transform {

@@ -11,7 +11,7 @@ features:
   - encoder
   - underglow
   - studio
-  - pointer
+  - touchpad
 siblings:
   - sofle_left
   - sofle_right
