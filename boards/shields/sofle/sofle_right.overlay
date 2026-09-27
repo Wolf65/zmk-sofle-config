@@ -56,8 +56,8 @@
         status = "okay";
         
         /* GPIO connections */
-        rdy-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;  /* RDY pin */
-        rst-gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;  /* RST pin */
+        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* RDY pin */
+        rst-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;  /* RST pin */
 
         enable-power-management;
         
