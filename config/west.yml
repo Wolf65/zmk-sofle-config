@@ -7,8 +7,10 @@ manifest:
       ####
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
-    - name: stelmakhdigital
-      url-base: https://github.com/stelmakhdigital
+    #- name: stelmakhdigital
+    #  url-base: https://github.com/stelmakhdigital
+    - name: geeksville
+      url-base: https://github.com/geeksville
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -18,8 +20,11 @@ manifest:
     - name: zmk-nice-oled
       remote: mctechnology17
       revision: main
+    #- name: zmk_driver_azoteq
+    #  remote: stelmakhdigital
+    #  revision: master
     - name: zmk_driver_azoteq
-      remote: stelmakhdigital
+      remote: geeksville
       revision: master
   self:
     path: config
