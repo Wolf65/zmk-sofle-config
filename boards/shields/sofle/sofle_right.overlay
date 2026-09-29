@@ -21,7 +21,6 @@
 *                                 \____ gpio1 7
 */
 
-#include <zephyr/dt-bindings/i2c/i2c.h>
 #include "sofle.dtsi"
 
 &default_transform {
@@ -96,15 +95,6 @@
     };
 };
 
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        tps43_split: tps43_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-            device = <&tps43_trackpad>;
-        };
-    };
+&trackpad_split {
+    device = <&tps43_trackpad>;
 };
