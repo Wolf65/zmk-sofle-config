@@ -45,7 +45,7 @@
 
 &i2c0 {
     status = "okay";
-    clock-frequency = <I2C_BITRATE_FAST>;
+    clock-frequency = <I2C_BITRATE_STANDARD>; //I2C_BITRATE_FAST
     pinctrl-0 = <&i2c0_default>;  /* Configuration for SDA and SCL */
     pinctrl-1 = <&i2c0_sleep>;    /* Configuration for SDA and SCL */
     pinctrl-names = "default", "sleep";
@@ -59,7 +59,7 @@
         rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;  /* RDY pin */
         rst-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;  /* RST pin */
 
-        enable-power-management;
+       // enable-power-management;
         
         sensitivity = <100>;           /* 100% = normal state */
         scroll-sensitivity = <50>;     /* 50% = normal state */
