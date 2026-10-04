@@ -5,21 +5,16 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
       ####
-    #- name: stelmakhdigital
-    #  url-base: https://github.com/stelmakhdigital
-    - name: geeksville
-      url-base: https://github.com/geeksville
+    - name: stelmakhdigital
+      url-base: https://github.com/stelmakhdigital
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
       ####
-    #- name: zmk_driver_azoteq
-    #  remote: stelmakhdigital
-    #  revision: master
     - name: zmk_driver_azoteq
-      remote: geeksville
+      remote: stelmakhdigital
       revision: master
   self:
     path: config
