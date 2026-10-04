@@ -2,7 +2,7 @@ file_format: "1"
 id: sofle_choc
 name: Sofle Choc
 type: shield
-url: https://github.com/josefadamcik/SofleKeyboard
+url: https://github.com/Wolf65/zmk-sofle-config
 requires: [nice_nano_v2]
 features:
   - keys
