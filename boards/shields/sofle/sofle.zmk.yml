@@ -4,7 +4,6 @@ name: Sofle Choc
 type: shield
 url: https://github.com/josefadamcik/SofleKeyboard
 requires: [nice_nano_v2]
-exposes: [i2c_oled]
 features:
   - keys
   - encoder
