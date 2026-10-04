@@ -54,8 +54,8 @@
 &i2c0 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_FAST>;
-    pinctrl-0 = <&i2c0_default>;  /* конфигурация для SDA и SCL */
-    pinctrl-1 = <&i2c0_sleep>;    /* конфигурация для SDA и SCL */
+    pinctrl-0 = <&i2c0_a_default>;  /* конфигурация для SDA и SCL */
+    pinctrl-1 = <&i2c0_a_sleep>;    /* конфигурация для SDA и SCL */
     pinctrl-names = "default", "sleep";
 
     tps43_trackpad: trackpad@74 {
