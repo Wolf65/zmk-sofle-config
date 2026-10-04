@@ -5,8 +5,6 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
       ####
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
     #- name: stelmakhdigital
     #  url-base: https://github.com/stelmakhdigital
     - name: geeksville
@@ -17,9 +15,6 @@ manifest:
       revision: v0.3
       import: app/west.yml
       ####
-    - name: zmk-nice-oled
-      remote: mctechnology17
-      revision: main
     #- name: zmk_driver_azoteq
     #  remote: stelmakhdigital
     #  revision: master
