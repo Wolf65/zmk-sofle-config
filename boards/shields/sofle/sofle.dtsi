@@ -17,8 +17,8 @@
 * SW25A D10 gpio0 9  |o 009 o GND o o o 106 o| gpio1 6  D9    ROW4
 *                    -------------------------
 *                                 | | \ gpio1 1
-*                                 | \__ gpio1 2
-*                                 \____ gpio1 7
+*                                 | \__ gpio1 2 RST
+*                                 \____ gpio1 7 RDY
 */
 
 #include <dt-bindings/zmk/matrix_transform.h>
