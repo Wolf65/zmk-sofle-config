@@ -7,7 +7,7 @@
 *                    |o GND             008 o| gpio0 8  D0    DATA
 *                    |o RST             GND o|
 *                    |o VCC             GND o|
-* ENCA  D21 gpio0 31 |o 031  SuperMini  017 o| gpio0 17 D2    SDA
+* ENCA  D21 gpio0 31 |o 031             017 o| gpio0 17 D2    SDA
 * ENCB  D20 gpio0 29 |o 029  NRF52840   020 o| gpio0 20 D3    SCL
 * COL0  D19 gpio0 2  |o 002             022 o| gpio0 22 D4    
 * COL1  D18 gpio1 15 |o 115             024 o| gpio0 24 D5    ROW0
