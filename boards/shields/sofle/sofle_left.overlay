@@ -37,3 +37,11 @@
 &left_encoder {
     status = "okay";
 };
+
+&trackpad_split {
+    status = "okay";
+}; 
+
+&trackpad_listener {
+    status = "okay";
+}; 
