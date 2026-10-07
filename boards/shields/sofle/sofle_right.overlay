@@ -22,6 +22,7 @@
 */
 
 #include "sofle.dtsi"
+#include "pinctrl.dtsi"
 
 &default_transform {
     col-offset = <6>;
@@ -40,4 +41,62 @@
 
 &right_encoder {
     status = "okay";
+};
+
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    pinctrl-0 = <&custom_i2c0_default>;                        /* Configuration for SDA and SCL */
+    pinctrl-1 = <&custom_i2c0_sleep>;                          /* Configuration for SDA and SCL */
+    pinctrl-names = "default", "sleep";
+
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
+        status = "okay";
+        
+        /* GPIO connections */
+        rst-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;        /* RST pin */
+        rdy-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;        /* RDY pin */
+
+        enable-power-management;
+        report-rate-lp2 = <640>;
+        
+        sensitivity = <100>;                            /* 100% = normal state */
+        scroll-sensitivity = <50>;                      /* 50% = normal state */
+        zoom-sensitivity = <50>;                        /* 50% = normal state */
+
+        filter-settings=<0x0B>;                         /* See filter description in `available settings` */
+        // filter-dynamic-bottom=<7>;                   /* Dynamic filter bottom beta (optional) */
+        // filter-dynamic-lower=<6>;                    /* Dynamic filter lower speed (optional) */
+        // filter-dynamic-upper=<0xFA>;                 /* Dynamic filter upper speed (optional) */
+        x-resolution=<2048>;                            /* X resolution in pixels */
+        y-resolution=<1792>;                            /* Y resolution in pixels */
+
+        // swipe-initial-distance=<500>;                /* Swipe initial distance in px (optional) */
+        // swipe-initial-time=<200>;                    /* Swipe initial time in ms (optional) */
+        // swipe-angle=<20>;                            /* Max swipe angle in degrees (optional) */
+        // swipe-consecutive-distance=<200>;            /* Swipe consecutive distance in px (optional) */
+        // swipe-consecutive-time=<150>;                /* Swipe consecutive time in ms (optional) */
+        // scroll-initial-distance=<100>;               /* Scroll initial distance in px (optional) */
+        // scroll-angle=<30>;                           /* Max scroll angle in degrees (optional) */
+        // zoom-initial-distance=<100>;                 /* Zoom initial distance in px (optional) */
+        // zoom-consecutive-distance=<50>;              /* Zoom consecutive distance in px (optional) */
+
+        scroll;
+        two-finger-tap;
+        single-tap;
+        press-and-hold;
+        swipes;
+        // three-finger-swipe;                          /* 3-finger swipe only, without enabling 1-finger swipe (optional) */
+        // three-finger-swipe-throttle-ms=<300>;        /* Min ms between 3-finger swipe actuations, 0 disables (optional, default 300) */
+        zoom;
+
+        switch-xy;
+        invert-scroll-y;
+    };
+};
+
+&trackpad_split {
+    device = <&tps43_trackpad>;
 };

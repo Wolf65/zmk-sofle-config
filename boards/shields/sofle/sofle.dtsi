@@ -66,6 +66,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
               <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
+// Encoder
+
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 31 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
@@ -87,8 +89,29 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <20>; // realStep
     };
-};
 
-vbatt: vbatt {
+// TPS43
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        tps43_split: tps43_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    tps43_listener: tps43_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&tps43_split>;
+    };
+
+// VBATT
+
+    vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
     };
+    
+};
