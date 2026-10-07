@@ -99,5 +99,4 @@
 
 &trackpad_split {
     device = <&tps43_trackpad>;
-    status = "okay";
-}; 
+};
