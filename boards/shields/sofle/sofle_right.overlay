@@ -22,7 +22,6 @@
 */
 
 #include "sofle.dtsi"
-#include "pinctrl.dtsi"
 
 &default_transform {
     col-offset = <6>;
