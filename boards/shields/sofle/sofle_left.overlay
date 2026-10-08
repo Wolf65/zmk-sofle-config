@@ -45,7 +45,7 @@
     pinctrl-1 = <&custom_i2c0_sleep>;                          /* Configuration for SDA and SCL */
     pinctrl-names = "default", "sleep";
 
-    tps43_trackpad: trackpad@74 {
+    trackpad: trackpad@74 {
         compatible = "azoteq,tps43";
         reg = <0x74>;
         status = "okay";
@@ -90,10 +90,11 @@
         switch-xy;
         invert-scroll-y;
     };
+};
 
-
-    tps43_listener: tps43_listener {
+/ {
+    trackpad_listener: trackpad_listener {
         compatible = "zmk,input-listener";
-        device = <&tps43_trackpad>;
+        device = <&trackpad>;
     };
 };
