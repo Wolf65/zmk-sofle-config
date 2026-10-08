@@ -90,4 +90,10 @@
         switch-xy;
         invert-scroll-y;
     };
+
+
+    tps43_input: tps43_input {
+        compatible = "zmk,input-split";
+        device = <&tps43_trackpad>;
+    };
 };
