@@ -4,15 +4,16 @@ if SHIELD_SOFLE_LEFT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif #SHIELD_SOFLE_LEFT
-#-----------------------------------------------------
-if SHIELD_SOFLE_RIGHT
-
 config I2C
     default y
 
 config INPUT_TPS43
     default y
+    
+endif #SHIELD_SOFLE_LEFT
+#-----------------------------------------------------
+if SHIELD_SOFLE_RIGHT
+
 
 endif #SHIELD_SOFLE_RIGHT
 #-----------------------------------------------------
