@@ -22,6 +22,7 @@
 */
 
 #include "sofle.dtsi"
+#include "pinctrl.dtsi"
 
 &kscan0 {
     col-gpios
